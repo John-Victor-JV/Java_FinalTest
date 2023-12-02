@@ -37,7 +37,7 @@ public class Management {
     // Manager: name, birthYear, nbClients, nbTravelDays, rate, employeeVehicle
     // Programmer: name, birthYear, nbProjects, rate, employeeVehicle
     // Tester: name, birthYear, nbBugs, rate, employeeVehicle
-    /*void hireTest2() {
+    void hireTest2() {
         employees.clear();
         employees.add(new Manager("Serge", 1985, 30, 4, vt1));
         employees.add(new Manager("Cindy", 1974, 20, 6, 80, vt2));
@@ -148,5 +148,5 @@ public class Management {
             System.out.println(employee.contractInfo());
         }
         System.out.println("-------------------------");
-    }*/
+    }
 }

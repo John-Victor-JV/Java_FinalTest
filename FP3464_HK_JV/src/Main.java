@@ -10,11 +10,11 @@ public class Main {
         // Test part 2
         System.out.println("Test 2: ");
         System.out.println("Employees description: ");
-        //management.hireTest2();
+        management.hireTest2();
 
         // Test part 3
         System.out.println("Test 3: ");
         System.out.println("Employees description: ");
-        //management.hireTest3();
+        management.hireTest3();
     }
 }
