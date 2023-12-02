@@ -13,12 +13,14 @@ public class Employee {
     public Employee(String name, int birthYear) {
         this.name = name;
         this.birthYear = birthYear;
+        display();
     }
 
     public Employee(String name, int birthYear, Vehicle vehicle) {
         this.name = name;
         this.birthYear = birthYear;
         this.vehicle = vehicle;
+        display();
     }
 
     public String getName() {
@@ -36,22 +38,7 @@ public class Employee {
         return 0;
     }
 
-    public String getVehicle(){
-        String vehicleDetails = "Employee has a " + vehicle.getVehicle() + "\n\t- make: " +
-                vehicle.getMake() + "\n\t- plate: " + vehicle.getPlate() + "\n\t- color: " +
-                vehicle.getColor() + "\n\t- category: " + vehicle.getCategory();
-        if (vehicle instanceof Car){
-            vehicleDetails += "\n\t- gear type: " + ((Car) vehicle).getGear() + "\n\t- type: " + ((Car) vehicle).getType();
-        }else if (vehicle instanceof Motorcycle){
-            if (((Motorcycle) vehicle).isSideCar()){
-                vehicleDetails += "\n\t- with sidecar";
-            } else {
-                vehicleDetails += "\n\t- without sidecar";
-            }
 
-        }
-        return vehicleDetails;
-    }
 
     public int getAge(){
         int currentYear = Year.now().getValue();
@@ -71,17 +58,27 @@ public class Employee {
     }
 
     public String contractInfo() {
-        String info = "";
-        if (contract instanceof Permanent){
-            info = name + " is a " + getEmployeeType() + ". He/She is " + ((Permanent) contract).isMarried() + " and " +
-                    "he/she has " + ((Permanent) contract).getNbChildren() + " children." +
-                    "\nHe/She has worked for " + ((Permanent) contract).getAccumulatedDays() + " days and upon contract his/her" +
-                    " monthly salary is " + ((Permanent) contract).getMonthlySalary();
-        } else if (contract instanceof Temporary) {
-            info = name + ", is a " + getEmployeeType() +". He/She is a temporary employee with " +
-                    ((Temporary) contract).getHourlySalary() + " hourly salary and he worked for " +
-                    ((Temporary) contract).getAccumulatedHours() + " hours";
-        }
+        String info = name + ", is a " + getEmployeeType() + contract.toString();
         return info;
+    }
+
+    public void display(){
+        System.out.println("We have a new Employee: " + name + ", a " + getEmployeeType());
+    }
+
+    public String toString(){
+        String emp_details = name + ", a " + getEmployeeType() + "\n" +
+                "Age: " + getAge() + "\n" + vehicle.getVehicleDetails();
+        return emp_details;
+    }
+
+    public int getOccupationRate(int rate){
+        if (rate > 100) {
+            return 100;
+        } else if (rate < 10 && rate > 0) {
+            return 10;
+        } else {
+            return rate;
+        }
     }
 }

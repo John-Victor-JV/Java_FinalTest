@@ -36,4 +36,12 @@ public class Permanent extends Contract{
     public int getAccumulatedDays() {
         return accumulatedDays;
     }
+
+    public String toString(){
+        String info =". He/She is " + isMarried() + " and " +
+                    "he/she has " + getNbChildren() + " children." +
+                    "\nHe/She has worked for " + getAccumulatedDays() + " days and upon contract his/her" +
+                    " monthly salary is " + getMonthlySalary();
+        return info;
+    }
 }

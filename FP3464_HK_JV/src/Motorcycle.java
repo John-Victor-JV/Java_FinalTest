@@ -14,4 +14,14 @@ public class Motorcycle extends Vehicle{
     public String getVehicle(){
         return "MotorCycle";
     }
+
+    public String getVehicleDetails(){
+        String motorCycleDetails =  super.getVehicleDetails();
+        if (isSideCar()){
+            motorCycleDetails += "\n\t- with sidecar";
+        } else {
+            motorCycleDetails += "\n\t- without sidecar";
+        }
+        return motorCycleDetails;
+    }
 }

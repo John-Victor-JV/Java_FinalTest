@@ -30,4 +30,12 @@ public class Vehicle {
     public String getVehicle(){
         return "Vehicle";
     }
+
+    public String getVehicleDetails(){
+        String vehicleDetails = "Employee has a " + getVehicle() + "\n\t- make: " +
+                                getMake() + "\n\t- plate: " + getPlate() + "\n\t- color: " +
+                                getColor() + "\n\t- category: " + getCategory();
+
+        return vehicleDetails;
+    }
 }

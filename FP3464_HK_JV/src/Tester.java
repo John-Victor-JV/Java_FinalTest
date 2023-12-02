@@ -7,13 +7,13 @@ public class Tester extends Employee{
     public Tester(String name, int birthYear, int nbBugs, int rate){
         super(name, birthYear);
         this.nbBugs = nbBugs;
-        this.rate = rate;
+        this.rate = super.getOccupationRate(rate);;
     }
 
     public Tester(String name, int birthYear, int nbBugs, int rate, Vehicle vehicle){
         super(name, birthYear, vehicle);
         this.nbBugs = nbBugs;
-        this.rate = rate;
+        this.rate = super.getOccupationRate(rate);;
     }
 
     public int getNbBugs() {
@@ -21,15 +21,7 @@ public class Tester extends Employee{
     }
 
     public int getRate() {
-        if(rate > 100){
-            return 100;
-        } else if (rate < 10 && rate > 0) {
-            return 10;
-        } else if (rate == 0) {
-            return 100;
-        } else {
-            return rate;
-        }
+        return rate;
     }
     @Override
     public String getEmployeeType(){
@@ -41,5 +33,11 @@ public class Tester extends Employee{
         double income = 0;
         income = ((12 * baseRate) * rate) + nbBugs * GAIN_FACTOR_ERROR;
         return income;
+    }
+
+    public String toString(){
+        String tester_details = super.toString() + "\n" + getName() + " has an occupation rate: " + getRate() + "%" +
+                " and corrected " + getNbBugs() + " bugs.\nHis/Her estimated annual Income is " + annualIncome();
+        return tester_details;
     }
 }

@@ -6,34 +6,28 @@ public class Programmer extends Employee{
     public Programmer(String name, int birthYear, int nbProjects) {
         super(name, birthYear);
         this.nbProjects = nbProjects;
+        this.rate = 100;
     }
     public Programmer(String name, int birthYear, int nbProjects, int rate) {
         super(name, birthYear);
         this.nbProjects = nbProjects;
-        this.rate = rate;
+        this.rate = super.getOccupationRate(rate);;
     }
 
     public Programmer(String name, int birthYear, int nbProjects, int rate, Vehicle vehicle) {
         super(name, birthYear, vehicle);
         this.nbProjects = nbProjects;
-        this.rate = rate;
+        this.rate = super.getOccupationRate(rate);;
     }
 
     public Programmer(String name, int birthYear, int nbProjects, Vehicle vehicle) {
         super(name, birthYear, vehicle);
         this.nbProjects = nbProjects;
+        this.rate = 100;
     }
 
     public int getRate() {
-        if(rate > 100){
-            return 100;
-        } else if (rate < 10 && rate > 0) {
-            return 10;
-        } else if (rate == 0) {
-            return 100;
-        } else {
-            return rate;
-        }
+        return rate;
     }
 
     public int getNbProjects() {
@@ -48,5 +42,11 @@ public class Programmer extends Employee{
         double income = 0;
         income = ((12 * baseRate) * rate) + GAIN_FACTOR_PROJECTS * nbProjects;
         return income;
+    }
+
+    public String toString(){
+        String progammer_details = super.toString() + "\n" + getName() + " has an occupation rate: " + getRate() + "%" +
+                " and completed " + getNbProjects() + " projects.\nHis/Her estimated annual Income is " + annualIncome();
+        return progammer_details;
     }
 }

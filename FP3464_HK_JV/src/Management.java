@@ -29,9 +29,6 @@ public class Management {
         employees.add(new Tester("Pierre", 1987, 124, 50));
         employees.add(new Programmer("Matt", 1981, 5, 110));
         employees.add(new Programmer("Sarah", 1986, 3));
-        for (Employee employee : employees) {
-            System.out.println("We have a new Employee: "+employee.getName() + ", a " + employee.getEmployeeType());
-        }
     }
     //    Employee constructors
     // Manager: name, birthYear, nbClients, nbTravelDays, rate, employeeVehicle
@@ -45,29 +42,10 @@ public class Management {
         employees.add(new Tester("Pierre", 1987, 124, 50, m2));
         employees.add(new Programmer("Matt", 1981, 5, 110, vt4));
         employees.add(new Programmer("Sarah", 1986, 3, vt3));
-        for (Employee employee : employees) {
-            System.out.println("We have a new Employee: " + employee.getName() + ", a " + employee.getEmployeeType());
-        }
+
         for (Employee employee : employees) {
             System.out.println("-------------------------");
-            System.out.println("Name: " + employee.getName() + ", a " + employee.getEmployeeType());
-            System.out.println("Age: " + employee.getAge());
-            System.out.println(employee.getVehicle());
-
-            if (employee instanceof Programmer){
-                System.out.println(employee.getName() + " has an occupation rate: " +((Programmer) employee).getRate() + "%" +
-                        " and completed " + ((Programmer) employee).getNbProjects() + " projects.");
-                System.out.println("His/Her estimated annual Income is " + employee.annualIncome());
-            }else if (employee instanceof Manager){
-                System.out.println(employee.getName() + " has an occupation rate: " +((Manager) employee).getRate() + "%" +
-                        " He/She travelled " + ((Manager) employee).getNbTravelDays() + " days and has brought " +
-                        ((Manager) employee).getNbClients() + " new clients.");
-                System.out.println("His/Her estimated annual Income is " + employee.annualIncome());
-            } else if (employee instanceof Tester) {
-                System.out.println(employee.getName() + " has an occupation rate: " +((Tester) employee).getRate() + "%" +
-                        " and corrected " +((Tester) employee).getNbBugs() + " bugs.");
-                System.out.println("His/Her estimated annual Income is " + employee.annualIncome());
-            }
+            System.out.println(employee);
             System.out.println("-------------------------");
         }
     }
@@ -103,28 +81,8 @@ public class Management {
         employees.add(Sarah);
 
         for (Employee employee : employees) {
-            System.out.println("We have a new Employee: " + employee.getName() + ", a " + employee.getEmployeeType());
-        }
-        for (Employee employee : employees) {
             System.out.println("-------------------------");
-            System.out.println("Name: " + employee.getName() + ", a " + employee.getEmployeeType());
-            System.out.println("Age: " + employee.getAge());
-            System.out.println(employee.getVehicle());
-
-            if (employee instanceof Programmer){
-                System.out.println(employee.getName() + " has an occupation rate: " +((Programmer) employee).getRate() + "%" +
-                        " and completed " + ((Programmer) employee).getNbProjects() + " projects.");
-                System.out.println("His/Her estimated annual Income is " + employee.annualIncome());
-            }else if (employee instanceof Manager){
-                System.out.println(employee.getName() + " has an occupation rate: " +((Manager) employee).getRate() + "%" +
-                        " He/She travelled " + ((Manager) employee).getNbTravelDays() + " days and has brought " +
-                        ((Manager) employee).getNbClients() + " new clients.");
-                System.out.println("His/Her estimated annual Income is " + employee.annualIncome());
-            } else if (employee instanceof Tester) {
-                System.out.println(employee.getName() + " has an occupation rate: " +((Tester) employee).getRate() + "%" +
-                        " and corrected " +((Tester) employee).getNbBugs() + " bugs.");
-                System.out.println("His/Her estimated annual Income is " + employee.annualIncome());
-            }
+            System.out.println(employee);
             System.out.println("-------------------------");
         }
 

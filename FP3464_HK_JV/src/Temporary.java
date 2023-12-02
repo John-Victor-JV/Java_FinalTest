@@ -14,4 +14,11 @@ public class Temporary extends Contract{
     public int getAccumulatedHours() {
         return accumulatedHours;
     }
+
+    public String toString(){
+        String info =". He/She is a temporary employee with " +
+                getHourlySalary() + " hourly salary and he worked for " +
+                getAccumulatedHours() + " hours";
+        return info;
+    }
 }

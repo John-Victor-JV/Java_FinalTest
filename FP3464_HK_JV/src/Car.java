@@ -20,4 +20,10 @@ public class Car extends Vehicle{
     public String getVehicle(){
         return "Car";
     }
+
+    @Override
+    public String getVehicleDetails(){
+        String carDetails =  super.getVehicleDetails() + "\n\t- gear type: " + getGear() + "\n\t- type: " + getType();
+        return carDetails;
+    }
 }
