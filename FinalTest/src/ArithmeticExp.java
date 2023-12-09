@@ -64,7 +64,7 @@ class Product extends Binary {
 
     @Override
     public String ToString(){
-        return getLeft().ToString() + " * " + getRight().ToString() + " = " + evaluate();
+        return getLeft().ToString() + " * " + getRight().ToString();
     }
 }
 
@@ -80,7 +80,7 @@ class Sum extends Binary {
 
     @Override
     public String ToString() {
-        return getLeft().ToString() + " + " + getRight().ToString() + " = " + evaluate();
+        return getLeft().ToString() + " + " + getRight().ToString();
     }
 }
 
@@ -96,6 +96,6 @@ class Modulo extends Binary {
 
     @Override
     public String ToString() {
-        return getLeft().ToString() + " % " + getRight().ToString() + " = " + evaluate();
+        return getLeft().ToString() + " % " + getRight().ToString();
     }
 }
