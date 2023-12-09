@@ -1,4 +1,4 @@
-/** Data structures for the expressions*/
+/** Data structures for the expressions
 class ArithmeticExp {
     public int type;
     public int value;
@@ -11,11 +11,11 @@ class ArithmeticExp {
         this.left = left;
         this.right = right;
     }
-}
-/** main class */
+} **/
+/** main class
 class ArithmeticOperation {
     
-    /** Constants for representing the types*/
+    /** Constants for representing the types
     public static final int TYPE_NUMBER = 1;
     public static final int TYPE_SUM = 2;
     public static final int TYPE_PROD = 3;
@@ -30,7 +30,7 @@ class ArithmeticOperation {
         
         System.out.println(evaluate(term));
     }
-    /** Evaluating the expression recursively */
+    /** Evaluating the expression recursively
     public static int evaluate(ArithmeticExp term) {
         switch (term.type) {
             case TYPE_NUMBER:
@@ -45,3 +45,4 @@ class ArithmeticOperation {
         }
     }
 }
+ */
